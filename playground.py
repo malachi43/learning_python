@@ -67,3 +67,50 @@ print("malachi"[1:-1])
 animal = "monkey"
 
 print("animal: ",animal[:])
+
+
+def nested_sum(int_list):
+    total = 0
+    for list_item in int_list:
+        for item in list_item:
+            total += item
+    return total
+
+print("nested_sum: ", nested_sum([[1,2],[3], [4,5,6]]))
+
+# Cumulative sum for each index.
+def cumsum(num_list):
+    total = []
+    for i in range(1,len(num_list) + 1):
+        sum = 0
+        for j in range((i + 1) - 1):
+            sum += num_list[j]
+        total.append(sum)
+    return total
+
+print("cumsum: ", cumsum([1,2,3,4,5,6]))
+
+
+def middle(num_list):
+    clone = num_list[:]
+    if len(clone) <= 2:
+        return []
+    return clone[1:len(clone) - 1]
+
+
+def chop(num_list):
+    if len(num_list) <= 2:
+        return []
+    num_list.pop(0)
+    num_list.pop(len(num_list) - 1)
+
+
+def is_sorted(num_list):
+    for i in range(len(num_list) - 1):
+        if num_list[i] > num_list[i + 1]:
+            return False
+    return True
+
+
+
+
