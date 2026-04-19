@@ -39,3 +39,16 @@ def is_both(word1,word2):
 
 is_both("malachi","chibuike")
  
+def rotate_word(word, rotate_number):
+    word = word.lower()
+    rotated_word = ""
+    for char in word:
+        num = ( ord(char) + rotate_number ) % 123
+        print("num: ", num)
+        rotated_word = rotated_word + chr(num)
+
+    return rotated_word
+
+
+word = "znynpuv"
+print("rotated '" + word + "' to: ", rotate_word(word,-13))
