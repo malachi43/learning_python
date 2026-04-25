@@ -113,4 +113,24 @@ def is_sorted(num_list):
 
 
 
+count = 0
+def anagrams(filename):
+    global count
+    fin = open(filename)
+    map = {}
+    for line in fin:
+        sortWord = sorted(line.strip())
+        sortWord = "".join(sortWord)
+        if sortWord in map:
+            map[sortWord].append(line.strip())
+        else:
+            map[sortWord] = [line.strip()]
+        count += 1
+        if count == 10:
+            break
+    
+    return list(map.values())
+        
 
+
+print("anagram_list -> ",anagrams("anagrams.txt"))
